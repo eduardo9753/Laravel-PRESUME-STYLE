@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Http\Controllers\admin\variant;
+
+use App\Http\Controllers\Controller;
+use App\Models\Product;
+use Illuminate\Http\Request;
+
+class VariantController extends Controller
+{
+    //
+    public function __construct()
+    {
+        
+    }
+
+    public function index(Product $product)
+    {
+        return view('admin.variant.index', [
+            'product' => $product
+        ]);
+    }
+}
