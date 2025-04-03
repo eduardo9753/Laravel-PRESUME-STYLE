@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                 <a href="{{ route('admin.product.index') }}" class="text-decoration-none d-block d-lg-none">
-                    <h1 class="font-weight-bold border ">Presume<span
+                    <h1 class="font-weight-bold ">Presume<span
                             class="text-primary m-0 display-5 font-weight-semi-bold">Style</span></h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">

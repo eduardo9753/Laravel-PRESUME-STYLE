@@ -16,12 +16,9 @@
             <div class="login-section">
                 <div class="login-container center-div">
                     <div>
-                        <form action="">
-                            <h2 class="text-white text-center">Iniciar Sesión</h2>
-                            <button type="submit" class="gmail-login">
-                                <i class="fab fa-google"></i> Ingresar con Gmail
-                            </button>
-                        </form>
+                        <h2 class="text-white text-center">Iniciar Sesión</h2>
+                        <a class="gmail-login" href="{{ route('google.auth.redirect') }}"><i class="fab fa-google"></i>
+                            Ingresar con Gmail</a>
                     </div>
                 </div>
             </div>

@@ -42,7 +42,7 @@ Route::get('/presume-style/contact', ContactController::class)->name('user.conta
 
 
 //auth con google
-Route::get('/auth/google', [SocialAuthController::class ,'redirectToGoogl'])->name('google.auth.redirect');
+Route::get('/auth/google', [SocialAuthController::class ,'redirectToGoogle'])->name('google.auth.redirect');
 Route::get('/auth/google/callback', [SocialAuthController::class, 'handleGoogleCallback'])->name('google.auth.callback');
 
 

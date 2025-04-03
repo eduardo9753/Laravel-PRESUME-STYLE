@@ -5,12 +5,12 @@ namespace App\Http\Controllers\admin\category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class Categorycontroller extends Controller
+class CategoryController extends Controller
 {
     //
     public function __construct()
     {
-        
+        //$this->middleware('auth');
     }
 
     public function index()

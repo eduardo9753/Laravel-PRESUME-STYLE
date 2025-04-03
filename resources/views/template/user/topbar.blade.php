@@ -21,7 +21,7 @@
     <div class="row align-items-center py-3 px-xl-5">
         <div class="col-lg-3 d-none d-lg-block">
             <a href="" class="text-decoration-none">
-                <h1 class="font-weight-bold border ">Presume<span
+                <h1 class="font-weight-bold">Presume<span
                         class="text-primary m-0 display-5 font-weight-semi-bold">Style</span></h1>
             </a>
         </div>
