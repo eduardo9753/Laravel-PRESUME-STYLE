@@ -14,7 +14,7 @@ class RoleController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('can:lista roles');
+        //$this->middleware('can:lista roles');
     }
 
     public function index()
