@@ -10,7 +10,8 @@ class Size extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name'
+        'name',
+        'category_id'
     ];
 
     //me retorna las variantes del tamaño

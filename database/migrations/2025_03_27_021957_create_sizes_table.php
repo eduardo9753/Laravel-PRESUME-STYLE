@@ -15,7 +15,10 @@ class CreateSizesTable extends Migration
     {
         Schema::create('sizes', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique(); // Ej: S, M, L, XL, XXL
+            $table->string('name')->unique(); // polos: S, M, L, XL, XXL
+            $table->unsignedBigInteger('category_id');  // jeans: 32, 34 ,36
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

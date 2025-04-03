@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -37,6 +38,8 @@ class ProductController extends Controller
     //para guardar los datos
     public function store(Request $request)
     {
+        $request->request->add(['slug' => Str::slug($request->name)]); //PONER EN MINUSCULA Y LOS ESPACION LO RELLENA CON "-"
+
         //dd($request->all());
         $this->validate($request, [
             'name' => 'required',
@@ -49,6 +52,7 @@ class ProductController extends Controller
 
         $product = Product::create([
             'name' => $request->name,
+            'slug' => $request->slug,
             'description' => $request->description,
             'purchase_price' => $request->purchase_price,
             'sale_price' => $request->sale_price,
