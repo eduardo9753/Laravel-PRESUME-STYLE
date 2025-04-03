@@ -51,7 +51,7 @@ class User extends Authenticatable
     {
         $roles = $this->getRoleNames(); // obtiene el rol o los roles
 
-        if ($roles->constains('ADMINISTRADOR')) {
+        if ($roles->contains('ADMINISTRADOR')) {
             return redirect()->route('admin.product.index');
         } else {
             return redirect()->route('user.home.index');
