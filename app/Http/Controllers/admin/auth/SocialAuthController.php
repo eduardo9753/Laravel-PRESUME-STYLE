@@ -49,9 +49,9 @@ class SocialAuthController extends Controller
             // Redirige según el rol
             return $user->redirectToDashboard();
         } catch (InvalidStateException $e) {
-            return redirect()->route('login')->with('error', 'Error de autenticación con Google.');
+            return redirect()->route('login')->with('error', 'Error de autenticación con Google: ' . $e->getMessage());
         } catch (\Exception $e) {
-            return redirect()->route('login')->with('error', 'Ocurrió un error inesperado.');
+            return redirect()->route('login')->with('error', 'Ocurrió un error inesperado: ' . $e->getMessage());
         }
     }
 }
