@@ -11,7 +11,8 @@ class ImageController extends Controller
     //
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
+        $this->middleware('can:crear imagen');
     }
 
     public function index(Product $product)

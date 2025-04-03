@@ -11,7 +11,8 @@ class VariantController extends Controller
     //
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
+        $this->middleware('can:crear variante');
     }
 
     public function index(Product $product)

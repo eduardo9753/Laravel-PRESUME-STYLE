@@ -74,7 +74,8 @@
                         <div class="position-relative" style="z-index: 1;">
                             <h5 class="text-uppercase text-primary mb-3">Prendas de Alta Calidad</h5>
                             <h1 class="mb-4 font-weight-semi-bold">Look Asegurado</h1>
-                            <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Ver Productos</a>
+                            <a href="{{ route('user.shop.index') }}" class="btn btn-outline-primary py-md-2 px-md-3">Ver
+                                Productos</a>
                         </div>
                     </div>
                 </div>
@@ -84,7 +85,8 @@
                         <div class="position-relative" style="z-index: 1;">
                             <h5 class="text-uppercase text-primary mb-3">Ropa a tu Medida</h5>
                             <h1 class="mb-4 font-weight-semi-bold">Para Toda Ocasión</h1>
-                            <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Ver Productos</a>
+                            <a href="{{ route('user.shop.index') }}" class="btn btn-outline-primary py-md-2 px-md-3">Ver
+                                Productos</a>
                         </div>
                     </div>
                 </div>
@@ -113,15 +115,14 @@
             <div class="row justify-content-md-center py-5 px-xl-5">
                 <div class="col-md-6 col-12 py-5">
                     <div class="text-center mb-2 pb-2">
-                        <h2 class="section-title px-5 mb-3"><span class="bg-secondary px-2">Stay Updated</span></h2>
-                        <p>Amet lorem at rebum amet dolores. Elitr lorem dolor sed amet diam labore at justo ipsum eirmod
-                            duo labore labore.</p>
+                        <h2 class="section-title px-5 mb-3"><span class="bg-secondary px-2">Más Información</span></h2>
+                        <p>Moda femenina con estilo 💃 Encuentra los mejores pantalones, jeans, blusas y polos para cada
+                            ocasión. ✨ ¡Presume tu look con las últimas tendencias y siéntete increíble!</p>
                     </div>
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control border-white p-4" placeholder="Email Goes Here">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary px-4">Subscribe</button>
+                    <form action="{{ route('user.contact.index') }}" method="GET">
+                        <div class="text-center">
+                            <div class="">
+                                <button class="btn btn-primary text-white px-4">Nuestra Marca</button>
                             </div>
                         </div>
                     </form>

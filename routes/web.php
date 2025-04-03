@@ -34,6 +34,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class)->name('user.home.index');
 
 Route::get('/sing-in', [LoginController::class, 'index'])->name('login');
+Route::post('/logout', [LoginController::class , 'logout'])->name('admin.logout');
 
 Route::get('/presume-style/shop', [ShopController::class, 'index'])->name('user.shop.index');
 Route::get('/presume-style/show/{product}', [ShopController::class , 'show'])->name('user.shop.show');

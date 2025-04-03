@@ -6,11 +6,16 @@
                 <h6 class="m-0">Categorias</h6>
                 <i class="fa fa-angle-down text-dark"></i>
             </a>
+
             @php
                 $isHome = Request::is('/');
+                $navClass = $isHome
+                    ? 'collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0'
+                    : 'collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light';
             @endphp
-            <nav class="collapse {{ $isHome ? 'show' : 'position-absolute' }} navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0"
-                id="navbar-vertical">
+
+            <nav id="navbar-vertical" class="{{ $navClass }}"
+                @if (!$isHome) style="width: calc(100% - 30px); z-index: 1;" @endif>
                 <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
                     @foreach ($categories as $category)
                         <a href="" class="nav-item nav-link"> {{ $category->name }} </a>
@@ -18,6 +23,7 @@
                 </div>
             </nav>
         </div>
+
         <div class="col-lg-9">
             <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                 <a href="{{ route('user.home.index') }}" class="text-decoration-none d-block d-lg-none">
@@ -34,8 +40,20 @@
                         <a href="{{ route('user.contact.index') }}" class="nav-item nav-link">Contactos</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
-                        <a href="{{ route('login') }}" class="nav-item nav-link">Registrarme</a>
+                        @auth
+                            <a class="nav-item nav-link">
+                                <form action="{{ route('admin.logout') }}" method="POST">
+                                    @csrf
+                                    <input type="submit" class="btn btn-danger" value="Salir">
+                                </form>
+                            </a>
+                        @endauth
+
+                        @guest
+                            <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
+                            <a href="{{ route('login') }}" class="nav-item nav-link">Registrarme</a>
+                        @endguest
+
                     </div>
                 </div>
             </nav>

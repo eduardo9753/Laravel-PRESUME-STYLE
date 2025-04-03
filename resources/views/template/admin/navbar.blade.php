@@ -19,8 +19,16 @@
                         <a href="{{ route('admin.user.index') }}" class="nav-item nav-link">Usuarios</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="" class="nav-item nav-link">Salir</a>
-                        <a href="" class="nav-item nav-link">X</a>
+
+                        @auth
+                            <a class="nav-item nav-link">
+                                <form action="{{ route('admin.logout') }}" method="POST">
+                                    @csrf
+                                    <input type="submit" class="btn btn-danger" value="Salir">
+                                </form>
+                            </a>
+                        @endauth
+
                     </div>
                 </div>
             </nav>
