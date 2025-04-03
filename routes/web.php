@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\brand\BrandController;
 use App\Http\Controllers\admin\category\CategoryController;
 use App\Http\Controllers\admin\product\ProductController;
 use App\Http\Controllers\admin\role\RoleController;
+use App\Http\Controllers\admin\size\SizeController;
 use App\Http\Controllers\admin\user\UserController;
 use App\Http\Controllers\admin\variant\VariantController;
 use App\Http\Controllers\user\contact\ContactController;
@@ -62,6 +63,8 @@ Route::get('/presumestyle/admin/create/image/{product}', [ImageController::class
 Route::get('/presumestyle/admin/index/brand', [BrandController::class , 'index'])->name('admin.brand.index');
 Route::get('/presumestyle/admin/index/category', [CategoryController::class, 'index'])->name('admin.category.index');
 
+
+Route::get('/presumestyle/admin/size/index', [SizeController::class , 'index'])->name('admin.size.index');
 
 
 Route::get('/presumestyle/user/index', [UserController::class, 'index'])->name('admin.user.index');

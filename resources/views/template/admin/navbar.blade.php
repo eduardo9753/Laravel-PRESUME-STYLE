@@ -17,6 +17,7 @@
                         <a href="{{ route('admin.brand.index') }}" class="nav-item nav-link">Marcas</a>
                         <a href="{{ route('admin.roles.index') }}" class="nav-item nav-link">Roles</a>
                         <a href="{{ route('admin.user.index') }}" class="nav-item nav-link">Usuarios</a>
+                        <a href="{{ route('admin.size.index') }}" class="nav-item nav-link">Tallas</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0">
 
