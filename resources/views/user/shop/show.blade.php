@@ -37,7 +37,7 @@
 
                             @foreach ($product->images as $image)
                                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                    <img class="w-100 h-100" src="{{ $image->image_url }}" alt="Image">
+                                    <img class="w-100 h-100" style="width: 281px !important; height: 281px !important; object-fit: contain;"  src="{{ $image->image_url }}" alt="Image">
                                 </div>
                             @endforeach
 
