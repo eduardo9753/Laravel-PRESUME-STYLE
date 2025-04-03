@@ -204,7 +204,7 @@
                             <div class="card product-item border-0">
                                 <div
                                     class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                    <img class="img-fluid w-100"
+                                    <img class="img-fluid w-100" style="width: 100% !important; height: 381px !important; object-fit: contain;"
                                         src="{{ asset($product->images->first() ? $product->images->first()->image_url : 'assets/img/default.jpg') }}"
                                         alt="{{ $product->name }}">
                                 </div>
