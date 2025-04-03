@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\auth\LoginController;
+use App\Http\Controllers\admin\auth\SocialAuthController;
 use App\Http\Controllers\admin\image\ImageController;
 use App\Http\Controllers\admin\brand\BrandController;
 use App\Http\Controllers\admin\category\CategoryController;
@@ -38,6 +39,11 @@ Route::get('/presume-style/shop', [ShopController::class, 'index'])->name('user.
 Route::get('/presume-style/show/{product}', [ShopController::class , 'show'])->name('user.shop.show');
 
 Route::get('/presume-style/contact', ContactController::class)->name('user.contact.index');
+
+
+//auth con google
+Route::get('/auth/google', [SocialAuthController::class ,'redirectToGoogl'])->name('google.auth.redirect');
+Route::get('/auth/google/callback', [SocialAuthController::class, 'handleGoogleCallback'])->name('google.auth.callback');
 
 
 //rutas admin
