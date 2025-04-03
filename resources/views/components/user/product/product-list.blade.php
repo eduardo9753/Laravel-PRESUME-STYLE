@@ -4,9 +4,11 @@
             <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                 <a href="{{ route('user.shop.show', ['product' => $product]) }}">
                     <img class="img-fluid w-100"
-                        src="{{ asset($product->images->first() ? $product->images->first()->image_url : 'assets/img/default.jpg') }}"
+                        style="width: 281px !important; height: 281px !important; object-fit: cover;"
+                        src="{{ asset($product->images->first()?->image_url ?? 'assets/img/default.jpg') }}"
                         alt="{{ $product->name }}">
                 </a>
+
             </div>
             <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                 <h6 class="text-truncate mb-3">{{ $product->name }}</h6>
