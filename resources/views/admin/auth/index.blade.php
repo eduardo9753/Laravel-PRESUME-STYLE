@@ -17,6 +17,14 @@
                 <div class="login-container center-div">
                     <div>
                         <h2 class="text-white text-center">Iniciar Sesión</h2>
+
+                        {{-- Mostrar mensaje de error si existe --}}
+                        @if (session('error'))
+                            <div class="alert alert-danger text-center">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+
                         <a class="gmail-login" href="{{ route('google.auth.redirect') }}"><i class="fab fa-google"></i>
                             Ingresar con Gmail</a>
                     </div>
