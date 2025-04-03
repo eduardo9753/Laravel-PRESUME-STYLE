@@ -159,7 +159,7 @@
                             </tr>
                         </thead>
                         <tbody class="align-middle">
-                            color id {{ $size_id }}
+                            
                             @foreach ($product->variants as $variant)
                                 <tr>
                                     <td class="align-middle"><img src="{{ asset('assets/img/product-1.jpg') }}"
