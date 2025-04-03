@@ -4,7 +4,7 @@
             <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                 <a href="{{ route('user.shop.show', ['product' => $product]) }}">
                     <img class="img-fluid w-100" 
-                        style="width: 281px !important; height: 281px !important; object-fit: contain;" 
+                        style="width: 100% !important; height: 310px !important; object-fit: contain;" 
                         src="{{ asset($product->images->first()?->image_url ?? 'assets/img/default.jpg') }}" 
                         alt="{{ $product->name }}">
                 </a>
