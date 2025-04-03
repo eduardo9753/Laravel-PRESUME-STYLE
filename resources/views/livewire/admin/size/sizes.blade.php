@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="from-group">
-                                <label for="">Digite la marca</label>
+                                <label for="">Digite la Talla</label>
                                 <input wire:model='name' type="text" class="form-control" placeholder="XL">
                             </div>
                             @error('name')
@@ -25,7 +25,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            @error('color_id')
+                            @error('category_id')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>

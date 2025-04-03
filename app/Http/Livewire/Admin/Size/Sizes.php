@@ -34,9 +34,10 @@ class Sizes extends Component
     public function create()
     {
         $this->validate([
-            'name' => 'required|string|unique:sizes,name',
-            'category_id' => 'required|integer|unique:sizes,category_id|exists:categories,id',
-        ]);        
+            'name' => 'required',
+            'category_id' => 'required|exists:categories,id',
+        ]);
+
 
         Size::create([
             'name' => $this->name,
@@ -44,6 +45,7 @@ class Sizes extends Component
         ]);
 
         $this->reload();
+        $this->resetFields();
     }
 
     public function edit($id)
@@ -67,14 +69,13 @@ class Sizes extends Component
         ]);
         $this->reload();
         $this->resetFields();
-
     }
 
     public function delete($id)
     {
         $size = Size::find($id);
-        if($size){
-           $size->delete();
+        if ($size) {
+            $size->delete();
         }
         $this->reload();
     }
@@ -91,6 +92,7 @@ class Sizes extends Component
 
     public function resetFields()
     {
-        $this->size_id= '';
+        $this->size_id = '';
+        $this->name = '';
     }
 }
