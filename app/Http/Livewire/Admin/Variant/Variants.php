@@ -28,7 +28,7 @@ class Variants extends Component
     {
         $this->product = $product;
         $this->colors = Color::all();
-        $this->sizes = Size::all();
+        //$this->sizes = Size::all();
 
         $this->initialProduct($product);
         $this->initialColor();
@@ -137,6 +137,10 @@ class Variants extends Component
 
     public function initialSize()
     {
-        $this->size_id = Size::orderBy('id', 'asc')->pluck('id')->first();
+        // Obtener todas las tallas de la categoría
+        $this->sizes = Size::where('category_id', $this->product->category_id)->orderBy('id', 'asc')->get();
+
+        // Obtener el primer ID de la lista
+        $this->size_id = $this->sizes->isNotEmpty() ? $this->sizes->first()->id : null;
     }
 }
