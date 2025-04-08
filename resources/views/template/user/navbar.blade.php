@@ -35,9 +35,12 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="{{ route('user.home.index') }}" class="nav-item nav-link active">Home</a>
-                        <a href="{{ route('user.shop.index') }}" class="nav-item nav-link">Productos</a>
-                        <a href="{{ route('user.contact.index') }}" class="nav-item nav-link">Contactos</a>
+                        <a href="{{ route('user.home.index') }}"
+                            class="nav-item nav-link {{ request()->routeIs('user.home.index') ? 'active' : '' }}">Home</a>
+                        <a href="{{ route('user.shop.index') }}"
+                            class="nav-item nav-link {{ request()->routeIs('user.shop.index') ? 'active' : '' }}">Productos</a>
+                        <a href="{{ route('user.contact.index') }}"
+                            class="nav-item nav-link {{ request()->routeIs('user.contact.index') ? 'active' : '' }}">Contactos</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0">
                         @auth
@@ -69,7 +72,8 @@
                                     </h4>
                                     <h3 class="display-4 text-white font-weight-semi-bold mb-4">Vestido Moderno y
                                         Elegante</h3>
-                                    <a href="" class="btn btn-light py-2 px-3">Ver Productos</a>
+                                    <a href="{{ route('user.shop.index') }}" class="btn btn-light py-2 px-3">Ver
+                                        Productos</a>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +83,8 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <h4 class="text-light text-uppercase font-weight-medium mb-3">Pensando en ti</h4>
                                     <h3 class="display-4 text-white font-weight-semi-bold mb-4">Precio Razonable</h3>
-                                    <a href="" class="btn btn-light py-2 px-3">Ver Productos</a>
+                                    <a href="{{ route('user.shop.index') }}" class="btn btn-light py-2 px-3">Ver
+                                        Productos</a>
                                 </div>
                             </div>
                         </div>

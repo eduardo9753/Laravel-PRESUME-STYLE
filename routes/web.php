@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\auth\LoginController;
 use App\Http\Controllers\admin\auth\SocialAuthController;
+use App\Http\Controllers\admin\box\BoxController;
 use App\Http\Controllers\admin\image\ImageController;
 use App\Http\Controllers\admin\brand\BrandController;
 use App\Http\Controllers\admin\category\CategoryController;
@@ -62,9 +63,10 @@ Route::get('/presumestyle/admin/create/image/{product}', [ImageController::class
 
 Route::get('/presumestyle/admin/index/brand', [BrandController::class , 'index'])->name('admin.brand.index');
 Route::get('/presumestyle/admin/index/category', [CategoryController::class, 'index'])->name('admin.category.index');
+Route::get('/presumestyle/admin/index/size', [SizeController::class , 'index'])->name('admin.size.index');
+Route::get('/presumestyle/admin/index/box', [BoxController::class, 'index'])->name('admin.box.index');
+Route::post('/presumestyle/admin/box/generate/pdf', [BoxController::class , 'generate'])->name('admin.box.generate');
 
-
-Route::get('/presumestyle/admin/size/index', [SizeController::class , 'index'])->name('admin.size.index');
 
 
 Route::get('/presumestyle/user/index', [UserController::class, 'index'])->name('admin.user.index');

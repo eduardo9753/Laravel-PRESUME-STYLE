@@ -12,12 +12,21 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="{{ route('admin.product.index') }}" class="nav-item nav-link active">Productos</a>
-                        <a href="{{ route('admin.category.index') }}" class="nav-item nav-link">Categorias</a>
-                        <a href="{{ route('admin.brand.index') }}" class="nav-item nav-link">Marcas</a>
-                        <a href="{{ route('admin.roles.index') }}" class="nav-item nav-link">Roles</a>
-                        <a href="{{ route('admin.user.index') }}" class="nav-item nav-link">Usuarios</a>
-                        <a href="{{ route('admin.size.index') }}" class="nav-item nav-link">Tallas</a>
+                        <a href="{{ route('admin.product.index') }}"
+                            class="nav-item nav-link {{ request()->routeIs('admin.product.index') ? 'active' : '' }}">Productos</a>
+                        <a href="{{ route('admin.category.index') }}"
+                            class="nav-item nav-link {{ request()->routeIs('admin.category.index') ? 'active' : '' }}">Categorias</a>
+                        <a href="{{ route('admin.brand.index') }}"
+                            class="nav-item nav-link {{ request()->routeIs('admin.brand.index') ? 'active' : '' }}">Marcas</a>
+                        <a href="{{ route('admin.roles.index') }}"
+                            class="nav-item nav-link {{ request()->routeIs('admin.roles.index') ? 'active' : '' }}">Roles</a>
+                        <a href="{{ route('admin.user.index') }}"
+                            class="nav-item nav-link {{ request()->routeIs('admin.user.index') ? 'active' : '' }}">Usuarios</a>
+                        <a href="{{ route('admin.size.index') }}"
+                            class="nav-item nav-link {{ request()->routeIs('admin.size.index') ? 'active' : '' }}">Tallas</a>
+                        <a href="{{ route('admin.box.index') }}"
+                            class="nav-item nav-link {{ request()->routeIs('admin.box.index') ? 'active' : '' }}">Caja</a>
+
                     </div>
                     <div class="navbar-nav ml-auto py-0">
 
