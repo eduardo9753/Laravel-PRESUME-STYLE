@@ -51,7 +51,7 @@ class Boxes extends Component
             'discount' => $this->discount, //descuento
             'date_today' => date('Y-m-d'), //fecha hoy
             'revenue' => $this->revenueSale($this->purchase_price, $this->sale_price), //ganancia
-            'user_id' => 1,
+            'user_id' => auth()->user()->id,
         ]);
 
         $this->reload();
