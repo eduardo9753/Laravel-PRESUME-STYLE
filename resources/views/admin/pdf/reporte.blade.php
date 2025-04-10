@@ -124,14 +124,14 @@
             </thead>
             <tbody>
 
-                <tr>
-                    @foreach ($boxes as $box)
+                @foreach ($boxes as $box)
+                    <tr>
                         <td>{{ $box->name }}</td>
                         <td>S/.{{ $box->sale_price }}</td>
                         <td>S/.{{ $box->purchase_price }}</td>
                         <td>S/.{{ $box->revenue }}</td>
-                    @endforeach
-                </tr>
+                    </tr>
+                @endforeach
 
             </tbody>
         </table>
