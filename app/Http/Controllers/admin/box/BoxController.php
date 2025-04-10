@@ -12,7 +12,7 @@ class BoxController extends Controller
     //
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
         //$this->middleware('can:crear marca');
     }
 
@@ -25,8 +25,10 @@ class BoxController extends Controller
     {
         $boxes = Box::whereBetween('date_today', [$request->fecha_inicio, $request->fecha_fin])->get();
         $totalAmount = $boxes->sum('revenue');
+        $totalSales = $boxes->sum('sale_price');
+        $totalPurchases = $boxes->sum('purchase_price');
 
-        $pdf = PDF::loadView('admin.pdf.reporte', compact('totalAmount', 'boxes', 'request'));
+        $pdf = PDF::loadView('admin.pdf.reporte', compact('totalAmount', 'boxes', 'request', 'totalSales', 'totalPurchases'));
 
         return $pdf->stream('reportes.pdf');
     }

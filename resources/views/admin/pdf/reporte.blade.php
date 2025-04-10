@@ -113,11 +113,48 @@
             <p><strong>Hora:</strong> {{ date('H:i:s') }}</p>
         </div>
 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Venta</th>
+                    <th>Inversion</th>
+                    <th>Ganancia</th>
+                </tr>
+            </thead>
+            <tbody>
 
+                <tr>
+                    @foreach ($boxes as $box)
+                        <td>{{ $box->name }}</td>
+                        <td>S/.{{ $box->sale_price }}</td>
+                        <td>S/.{{ $box->purchase_price }}</td>
+                        <td>S/.{{ $box->revenue }}</td>
+                    @endforeach
+                </tr>
 
-        <div class="total">
-            <p><strong>Total Ganancia:</strong> S/.{{ $totalAmount }}</p>
-        </div>
+            </tbody>
+        </table>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>VENTA TOTAL</th>
+                    <th>INVERSION TOTAL</th>
+                    <th>GANACIA TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>S/.{{ $totalSales }}</td>
+                    <td>S/.{{ $totalPurchases }}</td>
+                    <td>S/.{{ $totalAmount }}</td>
+                </tr>
+
+            </tbody>
+        </table>
+
         <div class="footer">
             <p>--- Para la mas hermosa ---</strong></p>
         </div>
