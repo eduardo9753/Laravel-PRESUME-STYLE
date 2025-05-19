@@ -18,7 +18,7 @@
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="">Escoga la Categoria</label>
+                                <label for="">Escoga la Subcategoria</label>
                                 <select wire:model='subcategory_id' class="form-control">
                                     @foreach ($subcategories as $category)
                                         <option value="{{ $category->id }}"> {{ $category->name }} </option>
@@ -50,7 +50,7 @@
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="">Escoga la Categoria</label>
+                                <label for="">Escoga la Subcategoria</label>
                                 <select wire:model='subcategory_id' class="form-control">
                                     @foreach ($subcategories as $category)
                                         <option value="{{ $category->id }}"> {{ $category->name }} </option>

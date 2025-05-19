@@ -12,7 +12,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="lead text-center text-primary">INFORMACIÓN DEL PRODUCTO</h2>
+                    <h2 class="lead text-center text-primary">IMAGENES DEL PRODUCTO</h2>
                 </div>
                 <div class="card-body">
                     {{-- si no hay id variante --}}
