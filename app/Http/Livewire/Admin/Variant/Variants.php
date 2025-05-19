@@ -138,7 +138,7 @@ class Variants extends Component
     public function initialSize()
     {
         // Obtener todas las tallas de la categoría
-        $this->sizes = Size::where('subcategory_id', $this->product->category_id)->orderBy('id', 'asc')->get();
+        $this->sizes = Size::where('subcategory_id', $this->product->subcategory_id)->orderBy('id', 'asc')->get();
 
         // Obtener el primer ID de la lista
         $this->size_id = $this->sizes->isNotEmpty() ? $this->sizes->first()->id : null;
