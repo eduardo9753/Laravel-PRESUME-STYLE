@@ -21,8 +21,8 @@
 
 <div class="row">
     <div class="col-md-3">
-        {!! Form::label('category_id', 'Categorias') !!}
-        {!! Form::select('category_id', $dataCategories, null, ['class' => 'form-control']) !!}
+        {!! Form::label('subcategory_id', 'Categorias') !!}
+        {!! Form::select('subcategory_id', $dataCategories, null, ['class' => 'form-control']) !!}
     </div>
 
     <div class="col-md-3">

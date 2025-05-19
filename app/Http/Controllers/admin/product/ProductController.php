@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Subcategory;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -31,7 +32,7 @@ class ProductController extends Controller
     public function create()
     {
         //para laravel collective 
-        $dataCategories = Category::pluck('name', 'id');
+        $dataCategories = Subcategory::pluck('name', 'id');
         $brands = Brand::pluck('name', 'id');
         return view('admin.product.create', [
             'dataCategories' => $dataCategories,
@@ -50,7 +51,7 @@ class ProductController extends Controller
             'description' => 'required',
             'purchase_price' => 'required',
             'sale_price' => 'required',
-            'category_id' => 'required',
+            'subcategory_id' => 'required',
             'brand_id' => 'required',
         ]);
 
@@ -61,7 +62,7 @@ class ProductController extends Controller
             'purchase_price' => $request->purchase_price,
             'sale_price' => $request->sale_price,
             'user_id' =>  auth()->user()->id,
-            'category_id' => $request->category_id,
+            'subcategory_id' => $request->subcategory_id,
             'brand_id' => $request->brand_id,
         ]);
 
@@ -95,7 +96,7 @@ class ProductController extends Controller
             'description' => 'required',
             'purchase_price' => 'required',
             'sale_price' => 'required',
-            'category_id' => 'required',
+            'subcategory_id' => 'required',
             'brand_id' => 'required',
         ]);
 
@@ -106,7 +107,7 @@ class ProductController extends Controller
             'purchase_price' => $request->purchase_price,
             'sale_price' => $request->sale_price,
             'user_id' => auth()->user()->id,
-            'category_id' => $request->category_id,
+            'subcategory_id' => $request->subcategory_id,
             'brand_id' => $request->brand_id,
         ]);
 

@@ -18,14 +18,14 @@ class Product extends Model
         'sale_price',
         'status',
         'user_id',
-        'category_id',
+        'subcategory_id',
         'brand_id'
     ];
 
-    //me retorna la categoria del producto
-    public function category()
+    //me retorna la subcategoria del producto
+    public function subcategory()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Subcategory::class);
     }
 
     //me retorna la marca del producto
