@@ -11,7 +11,7 @@ class Size extends Model
 
     protected $fillable = [
         'name',
-        'category_id'
+        'subcategory_id'
     ];
 
     //me retorna las variantes del tamaño
@@ -20,8 +20,8 @@ class Size extends Model
         return $this->hasMany(ProductVariant::class);
     }
 
-    public function category()
+    public function subcategory()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Subcategory::class);
     }
 }

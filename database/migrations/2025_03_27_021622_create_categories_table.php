@@ -15,7 +15,7 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name'); // Parte superior, Parte inferior , zapatos , accesorios
             $table->enum('status', ['ACTIVO','INACTIVO'])->default('ACTIVO');
             $table->timestamps();
         });

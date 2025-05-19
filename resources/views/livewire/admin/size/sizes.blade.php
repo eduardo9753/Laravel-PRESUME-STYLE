@@ -19,13 +19,13 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="">Escoga la Categoria</label>
-                                <select wire:model='category_id' class="form-control">
-                                    @foreach ($categories as $category)
+                                <select wire:model='subcategory_id' class="form-control">
+                                    @foreach ($subcategories as $category)
                                         <option value="{{ $category->id }}"> {{ $category->name }} </option>
                                     @endforeach
                                 </select>
                             </div>
-                            @error('category_id')
+                            @error('subcategory_id')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
@@ -51,13 +51,13 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="">Escoga la Categoria</label>
-                                <select wire:model='category_id' class="form-control">
-                                    @foreach ($categories as $category)
+                                <select wire:model='subcategory_id' class="form-control">
+                                    @foreach ($subcategories as $category)
                                         <option value="{{ $category->id }}"> {{ $category->name }} </option>
                                     @endforeach
                                 </select>
                             </div>
-                            @error('color_id')
+                            @error('subcategory_id')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
@@ -90,7 +90,7 @@
                                 @foreach ($sizes as $size)
                                     <tr>
                                         <td class="align-middle">{{ $size->name }}</td>
-                                        <td class="align-middle">{{ $size->category->name }}</td>
+                                        <td class="align-middle">{{ $size->subcategory->name }}</td>
                                         <td class="align-middle"><button wire:click='delete({{ $size->id }})'
                                                 class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
                                         <td class="align-middle"><button wire:click='edit({{ $size->id }})'

@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin\Size;
 
 use App\Models\Category;
 use App\Models\Size;
+use App\Models\Subcategory;
 use Livewire\Component;
 
 class Sizes extends Component
@@ -15,13 +16,13 @@ class Sizes extends Component
     //campos de la tabla sizes
     public $size_id;
     public $name;
-    public $category_id;
+    public $subcategory_id;
 
-    public $categories;
+    public $subcategories;
 
     public function mount()
     {
-        $this->categories = Category::all();
+        $this->subcategories = Subcategory::all();
         $this->reload();
         $this->initialCategory();
     }
@@ -35,13 +36,13 @@ class Sizes extends Component
     {
         $this->validate([
             'name' => 'required',
-            'category_id' => 'required|exists:categories,id',
+            'subcategory_id' => 'required|exists:subcategories,id',
         ]);
 
 
         Size::create([
             'name' => $this->name,
-            'category_id' => $this->category_id
+            'subcategory_id' => $this->subcategory_id
         ]);
 
         $this->reload();
@@ -53,19 +54,19 @@ class Sizes extends Component
         $size = Size::find($id);
         $this->size_id = $size->id;
         $this->name = $size->name;
-        $this->category_id = $size->category_id;
+        $this->subcategory_id = $size->subcategory_id;
     }
 
     public  function update()
     {
         $this->validate([
             'name' => 'required',
-            'category_id' => 'required|exists:categories,id',
+            'subcategory_id' => 'required|exists:subcategories,id',
         ]);
         $size = Size::find($this->size_id);
         $size->update([
             'name' => $this->name,
-            'category_id' => $this->category_id
+            'subcategory_id' => $this->subcategory_id
         ]);
         $this->reload();
         $this->resetFields();
@@ -87,7 +88,7 @@ class Sizes extends Component
 
     public function initialCategory()
     {
-        $this->category_id = Category::orderBy('id', 'asc')->pluck('id')->first();
+        $this->subcategory_id = Subcategory::orderBy('id', 'asc')->pluck('id')->first();
     }
 
     public function resetFields()
