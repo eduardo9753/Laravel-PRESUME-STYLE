@@ -14,8 +14,8 @@ class ProductController extends Controller
     //
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('can:crear producto');
+        //$this->middleware('auth');
+        //$this->middleware('can:crear producto');
     }
 
     //lista de productos
@@ -60,7 +60,7 @@ class ProductController extends Controller
             'description' => $request->description,
             'purchase_price' => $request->purchase_price,
             'sale_price' => $request->sale_price,
-            'user_id' => 1, //auth()->user()->id
+            'user_id' =>  auth()->user()->id,
             'category_id' => $request->category_id,
             'brand_id' => $request->brand_id,
         ]);
@@ -83,5 +83,37 @@ class ProductController extends Controller
             'brands' => $brands,
             'product' => $product
         ]);
+    }
+
+    public function update(Request $request, Product $product)
+    {
+        $request->request->add(['slug' => Str::slug($request->name)]); //PONER EN MINUSCULA Y LOS ESPACION LO RELLENA CON "-"
+
+        //dd($request->all());
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+            'purchase_price' => 'required',
+            'sale_price' => 'required',
+            'category_id' => 'required',
+            'brand_id' => 'required',
+        ]);
+
+        $product->update([
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'description' => $request->description,
+            'purchase_price' => $request->purchase_price,
+            'sale_price' => $request->sale_price,
+            'user_id' => auth()->user()->id,
+            'category_id' => $request->category_id,
+            'brand_id' => $request->brand_id,
+        ]);
+
+        if ($product) {
+            return redirect()->route('admin.product.edit', $product);
+        } else {
+            echo "producto no actualizado";
+        }
     }
 }
