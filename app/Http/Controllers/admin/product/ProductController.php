@@ -76,7 +76,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         //para laravel collective 
-        $dataCategories = Category::pluck('name', 'id');
+        $dataCategories = Subcategory::pluck('name', 'id');
         $brands = Brand::pluck('name', 'id');
 
         return view('admin.product.edit', [
