@@ -95,7 +95,7 @@
                     </div>
                     <div class="d-flex align-items-center mb-4 pt-2">
                         <a class="btn btn-primary px-3 text-white" target="_blank"
-                            href="https://wa.me/51956428239?text=Quisiera más información del producto - Codigo:{{ $product->id }} - {{ $product->name }} - {{ $product->sale_price }}" 
+                            href="https://wa.me/51904604800?text=Quisiera más información del producto - Codigo:{{ $product->id }} - {{ $product->name }} - {{ $product->sale_price }}" 
                             class="boton boton-sin-color mt-3 mb-3"><i class="fa-brands fa-whatsapp"></i> Más
                             Información</a>
                        

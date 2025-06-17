@@ -12,7 +12,7 @@
                     777, Comas 15311
                 </a></p>
             <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>veronica.araceli96@gmail.com</p>
-            <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+51 956 428 239</p>
+            <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+51 904 604 800</p>
         </div>
 
         <div class="col-lg-8 col-md-12">
